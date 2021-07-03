@@ -1,3 +1,11 @@
+# Check if oh-my-zsh exists and install if necessary.
+
+if ! [[ -d "$HOME/.oh-my-zsh" ]]
+then
+  echo 'Oh-My-Zsh not found. Installing...'
+  sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
