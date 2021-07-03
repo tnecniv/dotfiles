@@ -124,7 +124,16 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
+
+# Aliases and functions
+
 alias python='python3'
 alias start-lab='jupyter lab --LabApp.token=""'
 alias load-workspace='tmux attach -t workspace'
 alias lambda='ssh vpacelli@mae-ani-lambda.princeton.edu'
+
+ipy-run () { 
+  ipython -c "%run $1"
+}
+
+#
