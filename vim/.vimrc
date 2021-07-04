@@ -119,6 +119,9 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-set cursorline
 colorscheme onehalfdark
+
+set cursorline
+hi clear CursorLine
+hi CursorLine gui=underline cterm=underline
 
