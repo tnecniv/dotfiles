@@ -153,6 +153,9 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
+# Disables % as partial marker for EOL.
+PROMPT_EOL_MARK=''
+
 
 # Aliases and functions
 
