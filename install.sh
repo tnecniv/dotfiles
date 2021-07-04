@@ -1,11 +1,27 @@
 #!/bin/bash
 
-if command -v apt &> /dev/null
+unameOut="$(uname -s)"
+
+case "${unameOut}" in
+    Linux*)     machine='Linux';;
+    Darwin*)    machine='Mac';;
+    *)          machine='unknown';;
+esac
+
+if [[ $machine == "Linux"  ]]
 then
+  # TODO: Don't assume Ubuntu
   installer="apt install"
-elif command -v brew &> /dev/null
+elif [[ $machine == "Mac" ]]
 then
-  installer="brew install"
+  rosetta=$(sysctl -in sysctl.proc_translated)
+
+  if [[ $rosetta == 1 ]]
+  then
+    installer="arch -arm64 brew install"
+  else
+    installer="brew install"
+  fi
 else
   installer="unknown"
 fi
@@ -37,6 +53,8 @@ install_if_not_found () {
     echo "Found program \`$1'."
   fi
 }
+
+install_if_not_found "stow"
 
 for path in ./*; do
   [ -d "${path}" ] || continue # if not a directory, skip
