@@ -12,6 +12,18 @@ ipy-run () {
   ipython -c "%run $1"
 }
 
-# Homebrew
+# OS Specific commands.
+case `uname` in
+  Darwin)
+    # commands for MacOS go here
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  ;;
+  Linux)
+    # commands for Linux go here
+  ;;
+  FreeBSD)
+    # commands for FreeBSD go here
+  ;;
+esac
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+
