@@ -2,7 +2,7 @@
 
 alias python='python3'
 alias start-lab='jupyter lab --LabApp.token=""'
-alias load-workspace='tmux attach -t workspace'
+alias load-workspace='tmux attach -d -t workspace'
 
 alias automaton="ssh vpacelli@mae-majumdar-lab2.princeton.edu"
 alias lambda="ssh vpacelli@128.112.35.85"
