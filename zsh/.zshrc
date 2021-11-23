@@ -88,7 +88,7 @@ antigen bundle colored-man-pages
 antigen bundle colorize
 antigen bundle python
 antigen bundle brew
-antigen bundle osx
+antigen bundle macos
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
@@ -107,7 +107,8 @@ antigen apply
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git colored-man-pages colorize pip python brew osx zsh-syntax-highlighting zsh-autosuggestions)
+# plugins=(git colored-man-pages colorize pip python brew 
+zsh-syntax-highlighting zsh-autosuggestions)
 
 # source $ZSH/oh-my-zsh.sh
 
